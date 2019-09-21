@@ -55,5 +55,6 @@ public class UpdateServlet extends HttpServlet {
 
         System.out.println(contextPath);
         response.sendRedirect(contextPath+"/listServlet");
+        return;
     }
 }

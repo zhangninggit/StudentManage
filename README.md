@@ -144,3 +144,9 @@ public void doFilter(javax.servlet.ServletRequest req, javax.servlet.ServletResp
     
     
 ## Updates:
+
+2019-9-21(在服务器上测试暂无问题)
+1. 登录功能(配合filter校验)  
+    未登录状态下访问学生信息页面，会跳转到登录页面   
+    [测试链接]:http://192.168.2.108:8080/Beta2/listServlet  
+    访问时需要加上应用名称

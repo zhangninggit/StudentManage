@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -26,6 +27,7 @@ public class AddServlet extends HttpServlet {
         /*request.setAttribute("a",1000);
 
         request.getRequestDispatcher("/add.jsp").forward(request,response);*/
+
 
         Student student = new Student();
 
@@ -59,5 +61,6 @@ public class AddServlet extends HttpServlet {
 
         String contextPath = request.getContextPath();
         response.sendRedirect(contextPath+"/listServlet");
+        return;
     }
 }

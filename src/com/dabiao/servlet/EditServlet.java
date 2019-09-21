@@ -25,5 +25,6 @@ public class EditServlet extends HttpServlet {
         request.setAttribute("student",student);
 
         request.getRequestDispatcher("/editStudent.jsp").forward(request,response);
+        return;
     }
 }

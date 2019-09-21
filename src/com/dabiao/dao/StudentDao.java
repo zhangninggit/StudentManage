@@ -21,4 +21,5 @@ public interface StudentDao {
 
     List<Student> findAllPage(int currentPage,int rows);
 
+    boolean Login(String username,String password);
 }

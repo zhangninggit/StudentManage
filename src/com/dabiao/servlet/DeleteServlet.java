@@ -22,5 +22,6 @@ public class DeleteServlet extends HttpServlet {
 
         String contextPath = request.getContextPath();
         response.sendRedirect(contextPath+"/listServlet");
+        return;
     }
 }

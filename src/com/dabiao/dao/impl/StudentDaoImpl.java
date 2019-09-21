@@ -92,6 +92,41 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
+    public boolean Login(String username, String password) {
+
+
+        boolean flag = false;
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        ResultSet resultSet = null;
+        try {
+            conn = DBUtils.getConnection();
+
+            String sql = "select * from USER where username = ? and password = ?";
+
+             pstm = conn.prepareStatement(sql);
+
+             pstm.setString(1,username);
+             pstm.setString(2,password);
+
+             resultSet = pstm.executeQuery();
+                if(resultSet.next()){
+                    flag = true;
+                }
+
+            System.out.println("登录状态:"+flag);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            DBUtils.close(resultSet,pstm,conn);
+        }
+
+        return flag;
+
+    }
+
+    @Override
     public void add(Student student)  {
 
         Connection conn = null;
